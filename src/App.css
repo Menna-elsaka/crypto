@@ -1,4 +1,30 @@
-#root {
+@import "tailwindcss";
+
+
+.purple-text {
+  text-shadow: 4px 4px 10px rgba(169, 93, 230, 0.9); /* ظل بنفسجي */
+  
+  
+}
+
+.letter-spacing{
+  letter-spacing: 0.6em; /* تباعد كبير جدًا بين الحروف */
+}
+
+.purple-shadow{
+   box-shadow: 0 4px 15px rgba(191,132,252,0.5);
+   transition: all 0.3s ease;
+}
+
+.purple-shadow:hover{
+  box-shadow: 0 8px 25px rgba(191,132,252,0.8);
+}
+.container{
+  padding: 40px;
+  margin: auto;
+}
+
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +65,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
