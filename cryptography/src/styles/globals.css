@@ -22,19 +22,19 @@
   --theme-glow: rgba(138, 43, 226, 0.8);
 }
 
-/* Light Theme (Pastel) */
+/* Light Theme (Clean & Professional) */
 :root[data-theme="light"] {
-  --theme-bg-from: #E3F0FF;
-  --theme-bg-via: #F9E8FF;
-  --theme-bg-to: #D7FFF3;
-  --theme-text: #333333;
-  --theme-text-secondary: #666666;
-  --theme-card-bg: rgba(255, 255, 255, 0.7);
-  --theme-card-border: #D0D7E3;
-  --theme-accent: #C2A8FF;
-  --theme-accent-secondary: #9BE8D8;
-  --theme-shadow: rgba(208, 215, 227, 0.5);
-  --theme-glow: rgba(194, 168, 255, 0.6);
+  --theme-bg-from: #F8FAFC;
+  --theme-bg-via: #F1F5F9;
+  --theme-bg-to: #F8FAFC;
+  --theme-text: #1A1A1A;
+  --theme-text-secondary: #4A5568;
+  --theme-card-bg: rgba(255, 255, 255, 0.95);
+  --theme-card-border: rgba(0, 0, 0, 0.08);
+  --theme-accent: #6366F1;
+  --theme-accent-secondary: #8B5CF6;
+  --theme-shadow: rgba(0, 0, 0, 0.05);
+  --theme-glow: transparent;
 }
 
 :root {
@@ -274,6 +274,36 @@ html {
 
 .theme-glow {
   text-shadow: 0 0 20px var(--theme-glow);
+}
+
+/* Light mode specific overrides */
+:root[data-theme="light"] .theme-glow {
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .theme-card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Light mode heading styles */
+:root[data-theme="light"] h1,
+:root[data-theme="light"] h2,
+:root[data-theme="light"] h3 {
+  color: var(--theme-text);
+  text-shadow: none;
+  font-weight: 600;
+}
+
+/* Hide glow effects in light mode */
+:root[data-theme="light"] .glow-effect-dark {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Team member card gradients for light mode */
+:root[data-theme="light"] .team-member-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 /* Light theme specific cursor overrides */

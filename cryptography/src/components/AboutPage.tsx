@@ -23,12 +23,14 @@ export function AboutPage({}: AboutPageProps) {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h1 
-            className="text-purple-400 mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl"
-            style={{ textShadow: '0 0 20px rgba(138, 43, 226, 0.8)' }}
+            className="theme-accent mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl font-semibold theme-transition"
+            style={{ 
+              textShadow: 'var(--theme-glow)',
+            }}
           >
             ABOUT THE PROJECT
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4">
+          <p className="theme-text-secondary max-w-2xl mx-auto text-sm sm:text-base px-4 theme-transition">
             This educational platform was created to make cryptography accessible and engaging for everyone.
           </p>
         </motion.div>
@@ -41,29 +43,33 @@ export function AboutPage({}: AboutPageProps) {
             transition={{ delay: 0.2, duration: 0.6 }}
             whileHover={{ 
               y: -5,
-              boxShadow: '0 0 40px rgba(138, 43, 226, 0.4)'
             }}
+            className="theme-transition"
           >
             <Card 
-              className="bg-gradient-to-br from-[#0A0F3C]/60 to-[#1a0f4d]/40 border-purple-500/30 p-6 sm:p-8"
-              style={{ boxShadow: '0 0 20px rgba(138, 43, 226, 0.2)' }}
+              className="theme-card p-6 sm:p-8 theme-transition"
+              style={{ 
+                boxShadow: 'var(--theme-shadow)',
+              }}
             >
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <div className="p-3 sm:p-4 rounded-full bg-purple-500/30" style={{ boxShadow: '0 0 15px rgba(138, 43, 226, 0.4)' }}>
-                  <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" style={{ filter: 'drop-shadow(0 0 8px rgba(138, 43, 226, 0.8))' }} />
+                <div className="p-3 sm:p-4 rounded-full theme-accent-bg/20 theme-transition" style={{ 
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                }}>
+                  <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8 theme-accent theme-transition" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-purple-300 mb-3 text-lg sm:text-xl lg:text-2xl" style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.5)' }}>Our Institution</h2>
-                  <p className="text-gray-400 leading-relaxed mb-4 text-sm sm:text-base">
+                  <h2 className="theme-text mb-3 text-lg sm:text-xl lg:text-2xl font-semibold theme-transition">Our Institution</h2>
+                  <p className="theme-text-secondary leading-relaxed mb-4 text-sm sm:text-base theme-transition">
                     This project is developed at our esteemed college, dedicated to advancing 
                     computer science education and fostering innovation in cybersecurity. Our 
                     institution has a long-standing commitment to excellence in technology education 
                     and research.
                   </p>
-                  <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-purple-300">
-                    <span className="px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Computer Science</span>
-                    <span className="px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Cryptography</span>
-                    <span className="px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Research</span>
+                  <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
+                    <span className="px-3 py-1 theme-accent-bg/10 rounded-full border theme-card-border theme-text theme-transition">Computer Science</span>
+                    <span className="px-3 py-1 theme-accent-bg/10 rounded-full border theme-card-border theme-text theme-transition">Cryptography</span>
+                    <span className="px-3 py-1 theme-accent-bg/10 rounded-full border theme-card-border theme-text theme-transition">Research</span>
                   </div>
                 </div>
               </div>
@@ -80,13 +86,15 @@ export function AboutPage({}: AboutPageProps) {
               whileHover={{ 
                 y: -8,
                 rotateY: 5,
-                boxShadow: '0 0 40px rgba(138, 43, 226, 0.5)'
               }}
               style={{ transformStyle: 'preserve-3d' }}
+              className="theme-transition"
             >
               <Card 
-                className="bg-gradient-to-br from-[#0A0F3C]/60 to-[#1a0f4d]/40 border-purple-500/30 p-6 sm:p-8 h-full overflow-hidden"
-                style={{ boxShadow: '0 0 20px rgba(138, 43, 226, 0.2)' }}
+                className="theme-card p-6 sm:p-8 h-full overflow-hidden theme-transition"
+                style={{ 
+                  boxShadow: 'var(--theme-shadow)',
+                }}
               >
                 {/* Photo Section */}
                 <motion.div 
@@ -99,7 +107,7 @@ export function AboutPage({}: AboutPageProps) {
                 >
                   <div className="relative">
                     <motion.div
-                      className="absolute -inset-2 bg-gradient-to-r from-blue-600/40 to-purple-600/40 rounded-2xl blur-xl"
+                      className="absolute -inset-2 theme-accent-bg/10 rounded-2xl blur-xl glow-effect-dark"
                       animate={{
                         opacity: [0.5, 0.8, 0.5],
                         scale: [1, 1.05, 1],
@@ -109,12 +117,12 @@ export function AboutPage({}: AboutPageProps) {
                     <motion.img 
                       src={deanImage} 
                       alt="Dr. Wael Abdelkader"
-                      className="relative w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl border-2 border-purple-500/50"
+                      className="relative w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl border-2 theme-card-border theme-transition"
                       style={{
-                        boxShadow: '0 0 30px rgba(138, 43, 226, 0.5)',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                       }}
                       whileHover={{
-                        filter: 'brightness(1.1)',
+                        filter: 'brightness(1.05)',
                       }}
                     />
                   </div>
@@ -123,17 +131,16 @@ export function AboutPage({}: AboutPageProps) {
                 {/* Info Section */}
                 <div className="text-center mb-4">
                   <h3 
-                    className="text-purple-300 mb-2 text-xl sm:text-2xl" 
-                    style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.6)' }}
+                    className="theme-text mb-2 text-xl sm:text-2xl font-semibold theme-transition"
                   >
                     Dr. Wael Abdelkader
                   </h3>
-                  <div className="inline-block px-4 py-1.5 bg-blue-500/30 rounded-full border border-blue-500/50 mb-4">
-                    <p className="text-blue-200 text-sm sm:text-base">Dean of Faculty of Computers & Information</p>
+                  <div className="inline-block px-4 py-1.5 theme-accent-bg/10 rounded-full border theme-card-border mb-4 theme-transition">
+                    <p className="theme-text text-sm sm:text-base">Dean of Faculty of Computers & Information</p>
                   </div>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed text-center text-sm sm:text-base">
+                <p className="theme-text-secondary leading-relaxed text-center text-sm sm:text-base theme-transition">
                   Dr. Wael has been instrumental in fostering a culture of innovation and academic 
                   excellence. Under his leadership, the faculty has achieved remarkable growth 
                   in research output and student success, particularly in the fields of cybersecurity 
@@ -150,13 +157,15 @@ export function AboutPage({}: AboutPageProps) {
               whileHover={{ 
                 y: -8,
                 rotateY: -5,
-                boxShadow: '0 0 40px rgba(138, 43, 226, 0.5)'
               }}
               style={{ transformStyle: 'preserve-3d' }}
+              className="theme-transition"
             >
               <Card 
-                className="bg-gradient-to-br from-[#0A0F3C]/60 to-[#1a0f4d]/40 border-purple-500/30 p-6 sm:p-8 h-full overflow-hidden"
-                style={{ boxShadow: '0 0 20px rgba(138, 43, 226, 0.2)' }}
+                className="theme-card p-6 sm:p-8 h-full overflow-hidden theme-transition"
+                style={{ 
+                  boxShadow: 'var(--theme-shadow)',
+                }}
               >
                 {/* Photo Section */}
                 <motion.div 
@@ -169,7 +178,7 @@ export function AboutPage({}: AboutPageProps) {
                 >
                   <div className="relative">
                     <motion.div
-                      className="absolute -inset-2 bg-gradient-to-r from-purple-600/40 to-blue-600/40 rounded-2xl blur-xl"
+                      className="absolute -inset-2 theme-accent-bg/10 rounded-2xl blur-xl glow-effect-dark"
                       animate={{
                         opacity: [0.5, 0.8, 0.5],
                         scale: [1, 1.05, 1],
@@ -179,12 +188,12 @@ export function AboutPage({}: AboutPageProps) {
                     <motion.img 
                       src={supervisorImage} 
                       alt="Eng. Ibrahim Elgazar"
-                      className="relative w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl border-2 border-purple-500/50"
+                      className="relative w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl border-2 theme-card-border theme-transition"
                       style={{
-                        boxShadow: '0 0 30px rgba(138, 43, 226, 0.5)',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                       }}
                       whileHover={{
-                        filter: 'brightness(1.1)',
+                        filter: 'brightness(1.05)',
                       }}
                     />
                   </div>
@@ -193,17 +202,16 @@ export function AboutPage({}: AboutPageProps) {
                 {/* Info Section */}
                 <div className="text-center mb-4">
                   <h3 
-                    className="text-purple-300 mb-2 text-xl sm:text-2xl" 
-                    style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.6)' }}
+                    className="theme-text mb-2 text-xl sm:text-2xl font-semibold theme-transition"
                   >
                     Eng. Ibrahim Elgazar
                   </h3>
-                  <div className="inline-block px-4 py-1.5 bg-purple-500/30 rounded-full border border-purple-500/50 mb-4">
-                    <p className="text-purple-200 text-sm sm:text-base">Project Supervisor</p>
+                  <div className="inline-block px-4 py-1.5 theme-accent-bg/10 rounded-full border theme-card-border mb-4 theme-transition">
+                    <p className="theme-text text-sm sm:text-base">Project Supervisor</p>
                   </div>
                 </div>
 
-                <p className="text-gray-400 leading-relaxed text-center text-sm sm:text-base">
+                <p className="theme-text-secondary leading-relaxed text-center text-sm sm:text-base theme-transition">
                   Eng. Ibrahim is a distinguished engineer specializing in cryptography and 
                   information security. With extensive experience in the field, he has 
                   guided numerous research projects and fostered innovation in modern encryption 
@@ -220,20 +228,24 @@ export function AboutPage({}: AboutPageProps) {
             transition={{ delay: 0.5, duration: 0.6 }}
             whileHover={{ 
               y: -5,
-              boxShadow: '0 0 40px rgba(138, 43, 226, 0.4)'
             }}
+            className="theme-transition"
           >
             <Card 
-              className="bg-gradient-to-br from-[#0A0F3C]/60 to-[#1a0f4d]/40 border-purple-500/30 p-6 sm:p-8"
-              style={{ boxShadow: '0 0 20px rgba(138, 43, 226, 0.2)' }}
+              className="theme-card p-6 sm:p-8 theme-transition"
+              style={{ 
+                boxShadow: 'var(--theme-shadow)',
+              }}
             >
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <div className="p-3 sm:p-4 rounded-full bg-purple-500/30" style={{ boxShadow: '0 0 15px rgba(138, 43, 226, 0.4)' }}>
-                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-purple-400" style={{ filter: 'drop-shadow(0 0 8px rgba(138, 43, 226, 0.8))' }} />
+                <div className="p-3 sm:p-4 rounded-full theme-accent-bg/20 theme-transition" style={{ 
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+                }}>
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 theme-accent theme-transition" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-purple-300 mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl" style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.5)' }}>Development Team</h2>
-                  <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                  <h2 className="theme-text mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold theme-transition">Development Team</h2>
+                  <p className="theme-text-secondary leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base theme-transition">
                     This project was brought to life by a dedicated team of computer science students 
                     passionate about cryptography and web development. We worked collaboratively to 
                     create an engaging and educational platform that makes complex cryptographic 
@@ -261,23 +273,21 @@ export function AboutPage({}: AboutPageProps) {
                           stiffness: 100
                         }}
                         whileHover={{ 
-                          scale: 1.08,
-                          y: -10,
-                          rotateY: 5,
-                          boxShadow: '0 10px 40px rgba(138, 43, 226, 0.5)',
+                          scale: 1.05,
+                          y: -5,
                           transition: { duration: 0.3 }
                         }}
                         whileTap={{ scale: 0.95 }}
-                        className={`p-5 rounded-xl bg-gradient-to-br ${member.gradient} border border-purple-500/40 cursor-pointer backdrop-blur-sm relative overflow-hidden group`}
+                        className={`p-5 rounded-xl bg-gradient-to-br ${member.gradient} border theme-card-border cursor-pointer backdrop-blur-sm relative overflow-hidden group theme-transition team-member-card`}
                         style={{ 
-                          boxShadow: '0 0 15px rgba(138, 43, 226, 0.2)',
+                          boxShadow: 'var(--theme-shadow)',
                           transformStyle: 'preserve-3d',
                           transition: 'transform 200ms ease, opacity 150ms ease'
                         }}
                       >
-                        {/* Animated background effect */}
+                        {/* Animated background effect - only in dark mode */}
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/20 to-purple-600/0"
+                          className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/20 to-purple-600/0 glow-effect-dark"
                           animate={{
                             x: ['-100%', '100%'],
                           }}
@@ -289,9 +299,9 @@ export function AboutPage({}: AboutPageProps) {
                           }}
                         />
                         
-                        {/* Glowing orb effect */}
+                        {/* Glowing orb effect - only in dark mode */}
                         <motion.div
-                          className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl"
+                          className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl glow-effect-dark"
                           animate={{
                             scale: [1, 1.2, 1],
                             opacity: [0.3, 0.6, 0.3],
@@ -324,16 +334,15 @@ export function AboutPage({}: AboutPageProps) {
                             className="flex items-center justify-center gap-1.5 mb-1"
                           >
                             <motion.span 
-                              className="text-sm sm:text-base bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent"
-                              style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.5)' }}
+                              className="text-sm sm:text-base theme-text font-medium theme-transition"
                             >
                               {member.name}
                             </motion.span>
                             {member.isLeader && (
                               <Crown 
-                                className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 flex-shrink-0" 
+                                className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 flex-shrink-0 theme-transition" 
                                 style={{ 
-                                  filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.8))'
+                                  filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2))'
                                 }} 
                               />
                             )}
@@ -342,9 +351,9 @@ export function AboutPage({}: AboutPageProps) {
                           {/* Role badge */}
                          
                           
-                          {/* Decorative corner */}
+                          {/* Decorative corner - only in dark mode */}
                           <motion.div
-                            className="absolute top-2 right-2 w-2 h-2 bg-purple-400 rounded-full"
+                            className="absolute top-2 right-2 w-2 h-2 theme-accent-bg rounded-full glow-effect-dark"
                             animate={{
                               scale: [1, 1.5, 1],
                               opacity: [1, 0.5, 1],
@@ -371,20 +380,21 @@ export function AboutPage({}: AboutPageProps) {
             transition={{ delay: 0.6, duration: 0.6 }}
             whileHover={{ 
               scale: 1.02,
-              boxShadow: '0 0 50px rgba(138, 43, 226, 0.5)'
             }}
+            className="theme-transition"
           >
             <Card 
-              className="bg-gradient-to-br from-purple-500/20 to-blue-500/10 border-purple-500/40 p-6 sm:p-8 text-center"
-              style={{ boxShadow: '0 0 30px rgba(138, 43, 226, 0.3)' }}
+              className="theme-card p-6 sm:p-8 text-center theme-transition"
+              style={{ 
+                boxShadow: 'var(--theme-shadow)',
+              }}
             >
               <h2 
-                className="text-purple-300 mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl"
-                style={{ textShadow: '0 0 15px rgba(138, 43, 226, 0.6)' }}
+                className="theme-text mb-3 sm:mb-4 text-lg sm:text-xl lg:text-2xl font-semibold theme-transition"
               >
                 Project Mission
               </h2>
-              <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed text-sm sm:text-base">
+              <p className="theme-text-secondary max-w-3xl mx-auto leading-relaxed text-sm sm:text-base theme-transition">
                 Our mission is to demystify cryptography and make it accessible to students, 
                 educators, and enthusiasts. Through interactive visualizations and comprehensive 
                 resources, we aim to inspire the next generation of cybersecurity professionals 

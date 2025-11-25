@@ -3798,18 +3798,18 @@
 }
 
 :root[data-theme="light"] {
-  --theme-bg-from: #b4d1f2;
-  --theme-bg-via: #e2ccea;
-  --theme-bg-to: #d7fff3;
-  --theme-text-secondary: #302b2b;
-  --theme-card-bg: #ffffff00;
+  --theme-bg-from: #F8FAFC;
+  --theme-bg-via: #F1F5F9;
+  --theme-bg-to: #F8FAFC;
+  --theme-text: #1A1A1A;
+  --theme-text-secondary: #4A5568;
+  --theme-card-bg: rgba(255, 255, 255, 0.95);
+  --theme-card-border: rgba(0, 0, 0, 0.08);
+  --theme-accent: #6366F1;
+  --theme-accent-secondary: #8B5CF6;
+  --theme-shadow: rgba(0, 0, 0, 0.05);
+  --theme-glow: transparent;
   --theme-bg: #f8fafc;
-  --theme-text: #0f1720;
-  --theme-accent: #1e3a77;
-  --theme-accent-secondary: #ec4899;
-    --theme-card-border: #8a2be24d;
-  --theme-shadow: #8a2be233;
-  --theme-glow: #c2a8ff99;
 }
 
 :root {
