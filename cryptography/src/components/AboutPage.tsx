@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
-import { GraduationCap, Users, Award, Mail } from 'lucide-react';
+import { GraduationCap, Users, Award, Mail, Crown } from 'lucide-react';
 import supervisorImage from 'figma:asset/29cc0e24ef7cbb440a16eda48bd376dc1e3eb57b.png';
 import deanImage from 'figma:asset/62d15f6c3aa852d22d4e3ba5aa94d005c874699e.png';
 
@@ -99,76 +99,6 @@ export function AboutPage({}: AboutPageProps) {
                 >
                   <div className="relative">
                     <motion.div
-                      className="absolute -inset-2 bg-gradient-to-r from-purple-600/40 to-blue-600/40 rounded-2xl blur-xl"
-                      animate={{
-                        opacity: [0.5, 0.8, 0.5],
-                        scale: [1, 1.05, 1],
-                      }}
-                      transition={{ duration: 3, repeat: Infinity }}
-                    />
-                    <motion.img 
-                      src={supervisorImage} 
-                      alt="Eng. Ibrahim Elgazar"
-                      className="relative w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl border-2 border-purple-500/50"
-                      style={{
-                        boxShadow: '0 0 30px rgba(138, 43, 226, 0.5)',
-                      }}
-                      whileHover={{
-                        filter: 'brightness(1.1)',
-                      }}
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Info Section */}
-                <div className="text-center mb-4">
-                  <h3 
-                    className="text-purple-300 mb-2 text-xl sm:text-2xl" 
-                    style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.6)' }}
-                  >
-                    Eng. Ibrahim Elgazar
-                  </h3>
-                  <div className="inline-block px-4 py-1.5 bg-purple-500/30 rounded-full border border-purple-500/50 mb-4">
-                    <p className="text-purple-200 text-sm sm:text-base">Project Supervisor</p>
-                  </div>
-                </div>
-
-                <p className="text-gray-400 leading-relaxed text-center text-sm sm:text-base">
-                  Eng. Ibrahim is a distinguished engineer specializing in cryptography and 
-                  information security. With extensive experience in the field, he has 
-                  guided numerous research projects and fostered innovation in modern encryption 
-                  techniques and their applications.
-                </p>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30, scale: 0.9 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              whileHover={{ 
-                y: -8,
-                rotateY: -5,
-                boxShadow: '0 0 40px rgba(138, 43, 226, 0.5)'
-              }}
-              style={{ transformStyle: 'preserve-3d' }}
-            >
-              <Card 
-                className="bg-gradient-to-br from-[#0A0F3C]/60 to-[#1a0f4d]/40 border-purple-500/30 p-6 sm:p-8 h-full overflow-hidden"
-                style={{ boxShadow: '0 0 20px rgba(138, 43, 226, 0.2)' }}
-              >
-                {/* Photo Section */}
-                <motion.div 
-                  className="mb-6 flex justify-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6, duration: 0.6, type: 'spring' }}
-                  whileHover={{ scale: 1.05, rotate: -2 }}
-                >
-                  <div className="relative">
-                    <motion.div
                       className="absolute -inset-2 bg-gradient-to-r from-blue-600/40 to-purple-600/40 rounded-2xl blur-xl"
                       animate={{
                         opacity: [0.5, 0.8, 0.5],
@@ -211,6 +141,76 @@ export function AboutPage({}: AboutPageProps) {
                 </p>
               </Card>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              whileHover={{ 
+                y: -8,
+                rotateY: -5,
+                boxShadow: '0 0 40px rgba(138, 43, 226, 0.5)'
+              }}
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              <Card 
+                className="bg-gradient-to-br from-[#0A0F3C]/60 to-[#1a0f4d]/40 border-purple-500/30 p-6 sm:p-8 h-full overflow-hidden"
+                style={{ boxShadow: '0 0 20px rgba(138, 43, 226, 0.2)' }}
+              >
+                {/* Photo Section */}
+                <motion.div 
+                  className="mb-6 flex justify-center"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6, duration: 0.6, type: 'spring' }}
+                  whileHover={{ scale: 1.05, rotate: -2 }}
+                >
+                  <div className="relative">
+                    <motion.div
+                      className="absolute -inset-2 bg-gradient-to-r from-purple-600/40 to-blue-600/40 rounded-2xl blur-xl"
+                      animate={{
+                        opacity: [0.5, 0.8, 0.5],
+                        scale: [1, 1.05, 1],
+                      }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    />
+                    <motion.img 
+                      src={supervisorImage} 
+                      alt="Eng. Ibrahim Elgazar"
+                      className="relative w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-2xl border-2 border-purple-500/50"
+                      style={{
+                        boxShadow: '0 0 30px rgba(138, 43, 226, 0.5)',
+                      }}
+                      whileHover={{
+                        filter: 'brightness(1.1)',
+                      }}
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Info Section */}
+                <div className="text-center mb-4">
+                  <h3 
+                    className="text-purple-300 mb-2 text-xl sm:text-2xl" 
+                    style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.6)' }}
+                  >
+                    Eng. Ibrahim Elgazar
+                  </h3>
+                  <div className="inline-block px-4 py-1.5 bg-purple-500/30 rounded-full border border-purple-500/50 mb-4">
+                    <p className="text-purple-200 text-sm sm:text-base">Project Supervisor</p>
+                  </div>
+                </div>
+
+                <p className="text-gray-400 leading-relaxed text-center text-sm sm:text-base">
+                  Eng. Ibrahim is a distinguished engineer specializing in cryptography and 
+                  information security. With extensive experience in the field, he has 
+                  guided numerous research projects and fostered innovation in modern encryption 
+                  techniques and their applications.
+                </p>
+              </Card>
+            </motion.div>
           </div>
 
           {/* Team Section */}
@@ -242,11 +242,11 @@ export function AboutPage({}: AboutPageProps) {
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                     {[
-                      { name: 'Mohamed Abu Eldahab', gradient: 'from-purple-600/20 to-blue-600/20' },
+                      { name: 'Alaa Elgamal',  gradient: 'from-indigo-600/20 to-purple-600/20', isLeader: true },
+                      { name: 'Mohammed Abueldhb', gradient: 'from-purple-600/20 to-blue-600/20' },
                       { name: 'Helmy Mohamed',  gradient: 'from-blue-600/20 to-cyan-600/20' },
                       { name: 'Basmala Elshobky', gradient: 'from-pink-600/20 to-purple-600/20' },
                       { name: 'Menna Elsaka', gradient: 'from-green-600/20 to-emerald-600/20' },
-                      { name: 'Alaa Elgamal',  gradient: 'from-indigo-600/20 to-purple-600/20' },
                       { name: 'Mary Alaa', gradient: 'from-orange-600/20 to-red-600/20' },
                     ].map((member, index) => (
                       <motion.div
@@ -271,7 +271,8 @@ export function AboutPage({}: AboutPageProps) {
                         className={`p-5 rounded-xl bg-gradient-to-br ${member.gradient} border border-purple-500/40 cursor-pointer backdrop-blur-sm relative overflow-hidden group`}
                         style={{ 
                           boxShadow: '0 0 15px rgba(138, 43, 226, 0.2)',
-                          transformStyle: 'preserve-3d'
+                          transformStyle: 'preserve-3d',
+                          transition: 'transform 200ms ease, opacity 150ms ease'
                         }}
                       >
                         {/* Animated background effect */}
@@ -319,12 +320,24 @@ export function AboutPage({}: AboutPageProps) {
                           </motion.div>
                           
                           {/* Name with gradient text */}
-                          <motion.p 
-                            className="text-purple-200 mb-1 text-sm sm:text-base bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent"
-                            style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.5)' }}
+                          <motion.div 
+                            className="flex items-center justify-center gap-1.5 mb-1"
                           >
-                            {member.name}
-                          </motion.p>
+                            <motion.span 
+                              className="text-sm sm:text-base bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent"
+                              style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.5)' }}
+                            >
+                              {member.name}
+                            </motion.span>
+                            {member.isLeader && (
+                              <Crown 
+                                className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 flex-shrink-0" 
+                                style={{ 
+                                  filter: 'drop-shadow(0 0 4px rgba(255, 215, 0, 0.8))'
+                                }} 
+                              />
+                            )}
+                          </motion.div>
                           
                           {/* Role badge */}
                          
