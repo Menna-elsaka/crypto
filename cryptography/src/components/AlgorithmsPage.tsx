@@ -82,7 +82,7 @@ export function AlgorithmsPage({ onNavigate, onOpenVisualization }: AlgorithmsPa
                     onClick={() => onOpenVisualization(algorithm.id)}
                     style={{
                       borderColor: 'var(--theme-card-border)',
-                      boxShadow: '0 0 10px var(--theme-shadow)'
+                      boxShadow: '0 0 20px var(--theme-shadow)'
                     }}
                   >
                   <div className="relative h-48 overflow-hidden">
@@ -165,7 +165,7 @@ export function AlgorithmsPage({ onNavigate, onOpenVisualization }: AlgorithmsPa
                             onOpenVisualization(algorithm.id);
                           }
                         }}
-                        className="flex-1 theme-accent border theme-transition hover:opacity-90"
+                        className="flex-1 text-white border theme-transition hover:opacity-90"
                         style={{ 
                           background: `linear-gradient(to right, var(--theme-accent), var(--theme-accent-secondary))`,
                           borderColor: 'var(--theme-card-border)',
