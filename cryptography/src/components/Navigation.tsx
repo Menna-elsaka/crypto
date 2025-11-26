@@ -1,7 +1,7 @@
 import { Lock, Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import logo from '../assets/e74a85a657cb63546e0a553caf049b3afbacaa51.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface NavigationProps {
   currentPage: string;
@@ -22,10 +22,14 @@ export function Navigation({ currentPage, onNavigate, theme, onToggleTheme }: Na
     { name: 'About', path: 'about' },
   ];
 
+
   const handleNavigate = (path: string) => {
     onNavigate(path);
     setIsMobileMenuOpen(false);
   };
+useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme);
+}, [theme]);
 
   return (
     <motion.nav

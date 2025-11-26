@@ -35,8 +35,8 @@ export function ComparisonPage({}: ComparisonPageProps) {
 
   return (
     <motion.div 
-      className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6"
-      style={{ backgroundColor: '#EFECE3' }}
+      className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 theme-bg theme-transition"
+      
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -50,12 +50,12 @@ export function ComparisonPage({}: ComparisonPageProps) {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h1 
-            className="mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl font-semibold"
-            style={{ color: '#4A70A9' }}
+            className="mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl font-semibold theme-accent theme-transition"
+            
           >
             ALGORITHM COMPARISON
           </h1>
-          <p className="max-w-2xl mx-auto text-sm sm:text-base px-4" style={{ color: '#000000' }}>
+          <p className="max-w-2xl mx-auto text-sm sm:text-base px-4  theme-text-secondary theme-transition" >
             Compare encryption algorithms side-by-side. See how they differ in speed, security, and output format.
           </p>
         </motion.div>
@@ -68,26 +68,23 @@ export function ComparisonPage({}: ComparisonPageProps) {
           className="mb-8 sm:mb-12"
         >
           <Card 
-            className="p-4 sm:p-6 lg:p-8"
-            style={{ 
-              backgroundColor: 'rgba(255, 255, 255, 0.7)',
-              border: '1px solid #8FABD4',
-              borderRadius: '20px',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.07)'
-            }}
+            className="p-4 sm:p-6 lg:p-8 theme-card theme-shadow theme-transition"
+            style={{
+  border: '1px solid var(--theme-card-border)'
+}}
           >
-            <h2 className="mb-4 sm:mb-6 text-lg sm:text-xl lg:text-2xl font-semibold" style={{ color: '#4A70A9' }}>Comparison Parameters</h2>
+            <h2 className="mb-4 sm:mb-6 text-lg sm:text-xl lg:text-2xl font-semibold theme-accent theme-transition" >Comparison Parameters</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {algorithms.map((algorithm, index) => (
                 <motion.div 
                   key={algorithm.id} 
                   className="space-y-3 p-6 rounded-xl relative overflow-hidden"
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #8FABD4',
-                    borderRadius: '16px',
-                    boxShadow: '0 4px 14px rgba(0,0,0,0.07)'
-                  }}
+                 style={{
+  backgroundColor: 'var(--theme-card-bg)',
+  border: '1px solid var(--theme-card-border)',
+  borderRadius: '16px',
+  boxShadow: '0 0 12px var(--theme-shadow)'
+}}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -102,12 +99,12 @@ export function ComparisonPage({}: ComparisonPageProps) {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  <h3 className="font-semibold" style={{ color: '#4A70A9' }}>{algorithm.name}</h3>
+                  <h3 className="font-semibold theme-accent theme-transition">{algorithm.name}</h3>
                   
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-2" style={{ color: '#000000' }}>
-                        <Zap className="w-4 h-4" style={{ color: '#4A70A9' }} />
+                      <span className="flex items-center gap-2 theme-text-secondary theme-transition" >
+                        <Zap className="w-4 h-4 theme-accent theme-transition" />
                         Speed
                       </span>
                       <div className="flex gap-1">
@@ -116,7 +113,8 @@ export function ComparisonPage({}: ComparisonPageProps) {
                             key={i}
                             className="w-2 h-4 rounded"
                             style={{
-                              backgroundColor: i < algorithm.speed ? '#4A70A9' : '#E0E0E0'
+                              backgroundColor: i < algorithm.speed ?  'var(--theme-accent)' 
+  : 'var(--theme-card-border)'
                             }}
                             initial={{ height: 0, opacity: 0 }}
                             whileInView={{ height: 16, opacity: 1 }}
@@ -131,8 +129,8 @@ export function ComparisonPage({}: ComparisonPageProps) {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-2" style={{ color: '#000000' }}>
-                        <Shield className="w-4 h-4" style={{ color: '#4A70A9' }} />
+                      <span className="flex items-center gap-2 theme-text-secondary theme-transition">
+                        <Shield className="w-4 h-4 theme-accent theme-transition" />
                         Security
                       </span>
                       <div className="flex gap-1">
@@ -141,7 +139,8 @@ export function ComparisonPage({}: ComparisonPageProps) {
                             key={i}
                             className="w-2 h-4 rounded"
                             style={{
-                              backgroundColor: i < algorithm.security ? '#4A70A9' : '#E0E0E0'
+                              backgroundColor: i < algorithm.security ?    'var(--theme-accent)'
+  : 'var(--theme-card-border)'
                             }}
                             initial={{ height: 0, opacity: 0 }}
                             whileInView={{ height: 16, opacity: 1 }}
@@ -156,8 +155,8 @@ export function ComparisonPage({}: ComparisonPageProps) {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-2" style={{ color: '#000000' }}>
-                        <Smile className="w-4 h-4" style={{ color: '#4A70A9' }} />
+                      <span className="flex items-center gap-2 theme-text-secondary theme-transition">
+                        <Smile className="w-4 h-4 theme-accent theme-transition" />
                         Ease of Use
                       </span>
                       <div className="flex gap-1">
@@ -166,7 +165,8 @@ export function ComparisonPage({}: ComparisonPageProps) {
                             key={i}
                             className="w-2 h-4 rounded"
                             style={{
-                              backgroundColor: i < algorithm.easeOfUse ? '#4A70A9' : '#E0E0E0'
+                              backgroundColor: i < algorithm.easeOfUse   ? 'var(--theme-accent)'
+  : 'var(--theme-card-border)'
                             }}
                             initial={{ height: 0, opacity: 0 }}
                             whileInView={{ height: 16, opacity: 1 }}
@@ -181,13 +181,13 @@ export function ComparisonPage({}: ComparisonPageProps) {
                     </div>
                   </div>
 
-                  <div className="pt-3 mt-3 border-t" style={{ borderColor: '#8FABD4' }}>
+                  <div className="pt-3 mt-3 border-t" style={{ borderColor: 'var(--theme-card-border)' }}>
                     <span 
                       className="text-xs px-3 py-1 rounded-full inline-block"
-                      style={{ 
-                        backgroundColor: '#8FABD4',
-                        color: '#000000'
-                      }}
+style={{ 
+  backgroundColor: 'var(--theme-accent)',
+  color: 'var(--theme-text)'
+}}
                     >
                       {algorithm.type}
                     </span>
@@ -205,15 +205,14 @@ export function ComparisonPage({}: ComparisonPageProps) {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <Card 
-            className="p-6 sm:p-8"
-            style={{ 
-              backgroundColor: 'rgba(255, 255, 255, 0.7)',
-              border: '1px solid #8FABD4',
-              borderRadius: '20px',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.07)'
-            }}
+            className="p-6 sm:p-8 theme-card theme-transition"
+            style={{
+  border: '1px solid var(--theme-card-border)',
+  boxShadow: '0 0 15px var(--theme-shadow)'
+}}
+
           >
-            <h2 className="mb-6 font-semibold" style={{ color: '#4A70A9' }}>Live Encryption Comparison</h2>
+            <h2 className="mb-6 font-semibold theme-accent theme-transition" >Live Encryption Comparison</h2>
             
             <div className="space-y-6">
               <div className="flex flex-col sm:flex-row gap-4">
@@ -222,13 +221,11 @@ export function ComparisonPage({}: ComparisonPageProps) {
                   onChange={(e) => setCompareText(e.target.value)}
                   placeholder="Enter text to encrypt with all algorithms..."
                   className="flex-1"
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #8FABD4',
-                    color: '#000000',
-                    borderRadius: '8px',
-                    padding: '12px 16px'
-                  }}
+                 style={{
+  backgroundColor: 'var(--theme-card-bg)',
+  border: '1px solid var(--theme-card-border)',
+  color: 'var(--theme-text)'
+}}
                 />
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -238,26 +235,23 @@ export function ComparisonPage({}: ComparisonPageProps) {
                     onClick={handleCompare}
                     disabled={!compareText}
                     className="px-8"
-                    style={{ 
-                      backgroundColor: '#4A70A9',
-                      color: '#EFECE3',
-                      border: 'none',
-                      borderRadius: '8px',
-                      padding: '12px 24px',
-                      cursor: compareText ? 'pointer' : 'not-allowed',
-                      opacity: compareText ? 1 : 0.5
-                    }}
-                    onMouseEnter={(e) => {
-                      if (compareText) {
-                        e.currentTarget.style.backgroundColor = '#3B5B86';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (compareText) {
-                        e.currentTarget.style.backgroundColor = '#4A70A9';
-                      }
-                    }}
-                  >
+                    style={{
+  backgroundColor: 'var(--theme-accent)',
+  color: 'var(--theme-text)',
+  borderRadius: '8px',
+  cursor: compareText ? 'pointer' : 'not-allowed',
+  opacity: compareText ? 1 : 0.5
+}}
+                  onMouseEnter={(e) => {
+  if (compareText) {
+    e.currentTarget.style.backgroundColor = 'var(--theme-accent-secondary)';
+  }
+}}
+onMouseLeave={(e) => {
+  if (compareText) {
+    e.currentTarget.style.backgroundColor = 'var(--theme-accent)';
+  }
+}}>
                     Compare All
                   </Button>
                 </motion.div>
@@ -285,36 +279,37 @@ export function ComparisonPage({}: ComparisonPageProps) {
                         }}
                         className="p-5 rounded-xl"
                         style={{
-                          backgroundColor: '#FFFFFF',
-                          border: '1px solid #8FABD4',
-                          borderRadius: '16px',
-                          boxShadow: '0 4px 14px rgba(0,0,0,0.07)'
+                        backgroundColor: 'var(--theme-card-bg)',
+border: '1px solid var(--theme-card-border)',
+boxShadow: '0 0 15px var(--theme-shadow)',
+color: 'var(--theme-text)'
+
                         }}
                       >
                         <div className="flex items-start justify-between mb-3">
                           <div>
-                            <h3 className="font-semibold mb-1" style={{ color: '#4A70A9' }}>{algorithm.name}</h3>
+                            <h3 className="font-semibold mb-1 theme-accent theme-transition">{algorithm.name}</h3>
                             <span 
                               className="text-xs px-2 py-1 rounded-full inline-block"
                               style={{ 
-                                backgroundColor: '#8FABD4',
-                                color: '#000000'
+                                backgroundColor: 'var(--theme-accent-secondary)',
+color: 'var(--theme-text)'
                               }}
                             >
                               {algorithm.type}
                             </span>
                           </div>
                           <div className="text-right">
-                            <p className="text-xs mb-1" style={{ color: '#000000' }}>Encryption Time</p>
-                            <p className="font-semibold" style={{ color: '#4A70A9' }}>{result.time.toFixed(3)}ms</p>
+                            <p className="text-xs mb-1 theme-text-secondary theme-transition" >Encryption Time</p>
+                            <p className="font-semibold theme-accent theme-transition">{result.time.toFixed(3)}ms</p>
                           </div>
                         </div>
                         <div 
                           className="p-3 rounded font-mono text-sm break-all"
                           style={{
-                            backgroundColor: '#F5F5F5',
-                            border: '1px solid #8FABD4',
-                            color: '#000000'
+     backgroundColor: 'var(--theme-card-bg)',
+border: '1px solid var(--theme-card-border)',
+color: 'var(--theme-text)'
                           }}
                         >
                           {result.encrypted}
