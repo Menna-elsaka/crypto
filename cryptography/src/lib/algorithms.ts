@@ -1,4 +1,8 @@
 // Encryption algorithm implementations and data
+<<<<<<< HEAD
+=======
+import { encryptVigenere, decryptVigenere } from './utils/vigenereUtils';
+>>>>>>> basmala_branch
 
 export interface Algorithm {
   id: string;
@@ -284,6 +288,7 @@ export function encryptCaesar(text: string, shift: number = 3): string {
   }).join('');
 }
 
+<<<<<<< HEAD
 // Vigenère Cipher
 export function encryptVigenere(text: string, key: string = 'KEY'): string {
   const keyUpper = key.toUpperCase();
@@ -300,6 +305,10 @@ export function encryptVigenere(text: string, key: string = 'KEY'): string {
     return char;
   }).join('');
 }
+=======
+// Vigenère Cipher - re-exported from shared utils
+export { encryptVigenere } from './utils/vigenereUtils';
+>>>>>>> basmala_branch
 
 // Substitution Cipher (simple random substitution)
 export function encryptSubstitution(text: string): string {
@@ -366,12 +375,22 @@ export function encryptHill(text: string): string {
 }
 
 // Generic encryption router
+<<<<<<< HEAD
 export function encryptSimple(text: string, algorithmId: string): string {
+=======
+export function encryptSimple(text: string, algorithmId: string, key?: string): string {
+  console.log("VIGENERE FULL VISUALIZER LOGIC - encryptSimple called", { algorithmId, text, key });
+>>>>>>> basmala_branch
   switch(algorithmId) {
     case 'caesar':
       return encryptCaesar(text, 3);
     case 'vigenere':
+<<<<<<< HEAD
       return encryptVigenere(text, 'CRYPTO');
+=======
+      console.log("VIGENERE FULL VISUALIZER LOGIC - routing to encryptVigenere");
+      return encryptVigenere(text, key || 'KEY');
+>>>>>>> basmala_branch
     case 'substitution':
       return encryptSubstitution(text);
     case 'stream':
@@ -394,6 +413,7 @@ export function decryptCaesar(text: string, shift: number = 3): string {
   return encryptCaesar(text, 26 - shift); // Reverse shift
 }
 
+<<<<<<< HEAD
 export function decryptVigenere(text: string, key: string = 'CRYPTO'): string {
   const keyUpper = key.toUpperCase();
   let keyIndex = 0;
@@ -409,6 +429,10 @@ export function decryptVigenere(text: string, key: string = 'CRYPTO'): string {
     return char;
   }).join('');
 }
+=======
+// Vigenère Cipher decryption - re-exported from shared utils
+export { decryptVigenere } from './utils/vigenereUtils';
+>>>>>>> basmala_branch
 
 export function decryptSubstitution(text: string): string {
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -477,7 +501,11 @@ export function decryptHill(encrypted: string): string {
   return result.toLowerCase();
 }
 
+<<<<<<< HEAD
 export function decryptSimple(encrypted: string, algorithmId?: string): string {
+=======
+export function decryptSimple(encrypted: string, algorithmId?: string, key?: string): string {
+>>>>>>> basmala_branch
   try {
     // Detect algorithm from prefix or use provided algorithmId
     if (encrypted.includes('|KEY:')) {
@@ -500,7 +528,11 @@ export function decryptSimple(encrypted: string, algorithmId?: string): string {
       case 'caesar':
         return decryptCaesar(encrypted, 3);
       case 'vigenere':
+<<<<<<< HEAD
         return decryptVigenere(encrypted, 'CRYPTO');
+=======
+        return decryptVigenere(encrypted, key || 'KEY');
+>>>>>>> basmala_branch
       case 'substitution':
         return decryptSubstitution(encrypted);
       case 'stream':

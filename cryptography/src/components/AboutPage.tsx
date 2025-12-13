@@ -254,7 +254,11 @@ export function AboutPage({}: AboutPageProps) {
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                     {[
+<<<<<<< HEAD
                       { name: 'Alaa Elgamal',  gradient: 'from-indigo-600/20 to-purple-600/20'},
+=======
+                      { name: 'Alaa Elgamal',  gradient: 'from-indigo-600/20 to-purple-600/20', isLeader: true },
+>>>>>>> basmala_branch
                       { name: 'Mohammed Abueldhb', gradient: 'from-purple-600/20 to-blue-600/20' },
                       { name: 'Helmy Mohamed',  gradient: 'from-blue-600/20 to-cyan-600/20' },
                       { name: 'Basmala Elshobky', gradient: 'from-pink-600/20 to-purple-600/20' },

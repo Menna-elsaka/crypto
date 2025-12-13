@@ -82,7 +82,11 @@ export function AlgorithmsPage({ onNavigate, onOpenVisualization }: AlgorithmsPa
                     onClick={() => onOpenVisualization(algorithm.id)}
                     style={{
                       borderColor: 'var(--theme-card-border)',
+<<<<<<< HEAD
                       boxShadow: '0 0 20px var(--theme-shadow)'
+=======
+                      boxShadow: '0 0 10px var(--theme-shadow)'
+>>>>>>> basmala_branch
                     }}
                   >
                   <div className="relative h-48 overflow-hidden">
@@ -165,7 +169,11 @@ export function AlgorithmsPage({ onNavigate, onOpenVisualization }: AlgorithmsPa
                             onOpenVisualization(algorithm.id);
                           }
                         }}
+<<<<<<< HEAD
                         className="flex-1 text-white border theme-transition hover:opacity-90"
+=======
+                        className="flex-1 theme-accent border theme-transition hover:opacity-90"
+>>>>>>> basmala_branch
                         style={{ 
                           background: `linear-gradient(to right, var(--theme-accent), var(--theme-accent-secondary))`,
                           borderColor: 'var(--theme-card-border)',

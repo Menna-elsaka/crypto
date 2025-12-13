@@ -30,6 +30,10 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
   const [isAnimating, setIsAnimating] = useState(false);
   const [animatedChars, setAnimatedChars] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
+<<<<<<< HEAD
+=======
+  const [vigenereKey, setVigenereKey] = useState('KEY');
+>>>>>>> basmala_branch
   
   const encodeAudioRef = useRef<HTMLAudioElement | null>(null);
   const decodeAudioRef = useRef<HTMLAudioElement | null>(null);
@@ -40,6 +44,23 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
     decodeAudioRef.current = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLTgjMGHm7A7+OZSA0PVqzn7bdnGwU7k9n0vHcpBSh+y/DdkT8KFFy08O6nWBELR5/h9cBwIwUrgtDz1IU1Bx9vwvDjnEYND1ap5+u2aBsFO5TZ9L13KgUofsvw3ZE/ChRctPDvp1gRC0ef4fS/cCMFK4PQ89SFNQcfb8Lw45xGDQ9Wqefrtn8');
   }, []);
 
+<<<<<<< HEAD
+=======
+  // Reset all state when algorithm changes or component unmounts
+  useEffect(() => {
+    // Reset all Vigenere visualizer state
+    setInputText('');
+    setOutputText('');
+    setIsEncrypted(false);
+    setMode('encrypt');
+    setVigenereKey('KEY');
+    setAnimatedChars([]);
+    setCurrentStep(0);
+    setIsAnimating(false);
+    setCopied(false);
+  }, [algorithmId]);
+
+>>>>>>> basmala_branch
   const algorithm = algorithms.find(a => a.id === algorithmId);
 
   const playSound = (type: 'encode' | 'decode') => {
@@ -55,6 +76,11 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
   const handleEncrypt = () => {
     if (!inputText || !algorithm) return;
     
+<<<<<<< HEAD
+=======
+    console.log("VIGENERE FULL VISUALIZER LOGIC - handleEncrypt called", { algorithmId: algorithm.id, inputText });
+    
+>>>>>>> basmala_branch
     setIsAnimating(true);
     setCurrentStep(0);
     playSound('encode');
@@ -65,6 +91,11 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
     
     if (algorithm.type === 'hash') {
       result = hashText(inputText);
+<<<<<<< HEAD
+=======
+    } else if (algorithm.id === 'vigenere') {
+      result = encryptSimple(inputText, algorithm.id, vigenereKey);
+>>>>>>> basmala_branch
     } else {
       result = encryptSimple(inputText, algorithm.id);
     }
@@ -99,7 +130,13 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
     playSound('decode');
 
     // Animate decryption step by step
+<<<<<<< HEAD
     const decrypted = decryptSimple(inputText, algorithm.id);
+=======
+    const decrypted = algorithm.id === 'vigenere' 
+      ? decryptSimple(inputText, algorithm.id, vigenereKey)
+      : decryptSimple(inputText, algorithm.id);
+>>>>>>> basmala_branch
     const decryptedChars = decrypted.split('');
     setAnimatedChars([]);
     
@@ -260,6 +297,22 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
               </div>
             )}
 
+<<<<<<< HEAD
+=======
+            {algorithm.id === 'vigenere' && (
+              <div>
+                <label className="text-purple-300 mb-2 block">
+                  Key (letters only)
+                </label>
+                <Textarea
+                  value={vigenereKey}
+                  onChange={(e) => setVigenereKey(e.target.value)}
+                  placeholder="Enter key (e.g., LEMON, secret, ABC)"
+                  className="bg-black/60 border-purple-500/40 text-white placeholder:text-gray-500 min-h-[60px]"
+                />
+              </div>
+            )}
+>>>>>>> basmala_branch
             <div>
               <label className="text-purple-300 mb-2 block">
                 {mode === 'encrypt' || algorithm.type === 'hash' ? 'Input Text' : 'Encrypted Text to Decrypt'}
@@ -340,10 +393,17 @@ export function AlgorithmVisualization({ algorithmId, onClose }: AlgorithmVisual
                     <div className="p-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg border border-purple-400/30">
                       <p className="text-purple-300 flex items-center gap-2 mb-2">
                         <Lock className="w-4 h-4" />
+<<<<<<< HEAD
                         <span>Key: SECRET (repeating pattern)</span>
                       </p>
                       <div className="flex gap-1 text-xs font-mono">
                         {['S', 'E', 'C', 'R', 'E', 'T'].map((char, i) => (
+=======
+                        <span>Key: {vigenereKey.toUpperCase() || 'KEY'} (repeating pattern)</span>
+                      </p>
+                      <div className="flex gap-1 text-xs font-mono">
+                        {(vigenereKey.toUpperCase() || 'KEY').split('').map((char, i) => (
+>>>>>>> basmala_branch
                           <motion.span
                             key={i}
                             className="px-2 py-1 bg-purple-500/20 rounded border border-purple-400/40"

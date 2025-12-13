@@ -20,6 +20,10 @@ export function Footer({ onNavigate }: FooterProps) {
     { name: 'Algorithms', page: 'algorithms' },
     { name: 'Comparison', page: 'comparison' },
     { name: 'History', page: 'history' },
+<<<<<<< HEAD
+=======
+    { name: 'Cryptanalysis', page: 'cryptanalysis' },
+>>>>>>> basmala_branch
     { name: 'Resources', page: 'resources' },
     { name: 'About', page: 'about' },
   ];

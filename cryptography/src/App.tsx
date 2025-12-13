@@ -11,6 +11,23 @@ import { ResourcesPage } from './components/ResourcesPage';
 import { HistoryPage } from './components/HistoryPage';
 import { AboutPage } from './components/AboutPage';
 import { Blake2bPage } from './components/Blake2bPage';
+import { CryptanalysisPage } from './components/CryptanalysisPage';
+import { CryptanalysisDetailPage } from './components/CryptanalysisDetailPage';
+import { ExplanationDetailPage } from './components/ExplanationDetailPage';
+import { Blake2bCryptanalysis } from './components/cryptanalysis/Blake2bCryptanalysis';
+import { Blake2bExplanation } from './components/cryptanalysis/Blake2bExplanation';
+import { CaesarCipherCryptanalysis } from './components/cryptanalysis/CaesarCipherCryptanalysis';
+import { CaesarCipherExplanation } from './components/cryptanalysis/CaesarCipherExplanation';
+import { VigenereCipherCryptanalysis } from './components/cryptanalysis/VigenereCipherCryptanalysis';
+import { VigenereCipherExplanation } from './components/cryptanalysis/VigenereCipherExplanation';
+import { StreamCipherCryptanalysis } from './components/cryptanalysis/StreamCipherCryptanalysis';
+import { StreamCipherExplanation } from './components/cryptanalysis/StreamCipherExplanation';
+import { HillCipherCryptanalysis } from './components/cryptanalysis/HillCipherCryptanalysis';
+import { HillCipherExplanation } from './components/cryptanalysis/HillCipherExplanation';
+import { OtpCryptanalysis } from './components/cryptanalysis/OtpCryptanalysis';
+import { OtpExplanation } from './components/cryptanalysis/OtpExplanation';
+import { SubstitutionCryptanalysis } from './components/cryptanalysis/SubstitutionCryptanalysis';
+import { SubstitutionExplanation } from './components/cryptanalysis/SubstitutionExplanation';
 import { FloatingElements } from './components/FloatingElements';
 import { Footer } from './components/Footer';
 
@@ -78,6 +95,17 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Extract algorithm ID from page route (e.g., "cryptanalysis-caesar" -> "caesar")
+  const getAlgorithmIdFromPage = (page: string): string | null => {
+    if (page.startsWith('cryptanalysis-')) {
+      return page.replace('cryptanalysis-', '');
+    }
+    if (page.startsWith('explanation-')) {
+      return page.replace('explanation-', '');
+    }
+    return null;
+  };
+
   const handleOpenVisualization = (algorithmId: string) => {
     setSelectedAlgorithm(algorithmId);
   };
@@ -122,6 +150,65 @@ export default function App() {
             )}
             {currentPage === 'history' && (
               <HistoryPage key="history" />
+            )}
+            {currentPage === 'cryptanalysis' && (
+              <CryptanalysisPage key="cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'blake2b-cryptanalysis' && (
+              <Blake2bCryptanalysis key="blake2b-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'blake2b-explanation' && (
+              <Blake2bExplanation key="blake2b-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'caesar-cryptanalysis' && (
+              <CaesarCipherCryptanalysis key="caesar-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'caesar-explanation' && (
+              <CaesarCipherExplanation key="caesar-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'vigenere-cryptanalysis' && (
+              <VigenereCipherCryptanalysis key="vigenere-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'vigenere-explanation' && (
+              <VigenereCipherExplanation key="vigenere-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'stream-cryptanalysis' && (
+              <StreamCipherCryptanalysis key="stream-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'stream-explanation' && (
+              <StreamCipherExplanation key="stream-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'hill-cryptanalysis' && (
+              <HillCipherCryptanalysis key="hill-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'hill-explanation' && (
+              <HillCipherExplanation key="hill-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'otp-cryptanalysis' && (
+              <OtpCryptanalysis key="otp-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'otp-explanation' && (
+              <OtpExplanation key="otp-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'substitution-cryptanalysis' && (
+              <SubstitutionCryptanalysis key="substitution-cryptanalysis" onNavigate={handleNavigate} />
+            )}
+            {currentPage === 'substitution-explanation' && (
+              <SubstitutionExplanation key="substitution-explanation" onNavigate={handleNavigate} />
+            )}
+            {currentPage.startsWith('cryptanalysis-') && (
+              <CryptanalysisDetailPage 
+                key={currentPage} 
+                algorithmId={getAlgorithmIdFromPage(currentPage) || ''} 
+                onNavigate={handleNavigate} 
+              />
+            )}
+            {currentPage.startsWith('explanation-') && (
+              <ExplanationDetailPage 
+                key={currentPage} 
+                algorithmId={getAlgorithmIdFromPage(currentPage) || ''} 
+                onNavigate={handleNavigate} 
+              />
             )}
             {currentPage === 'resources' && (
               <ResourcesPage 

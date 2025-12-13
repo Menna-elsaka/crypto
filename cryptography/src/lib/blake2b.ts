@@ -1,8 +1,12 @@
 // BLAKE2b hashing algorithm implementation for visualization
+<<<<<<< HEAD
 // Based on RFC 7693 (Educational Visualization Version)
 
 
 import { blake2b } from 'blakejs';
+=======
+// Based on RFC 7693
+>>>>>>> basmala_branch
 
 const MASK64 = (1n << 64n) - 1n;
 
@@ -44,7 +48,11 @@ function blockToWords(bytes: Uint8Array): bigint[] {
   const b = new Uint8Array(128);
   b.set(bytes.slice(0, 128));
   const words: bigint[] = [];
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> basmala_branch
   for (let i = 0; i < 16; i++) {
     let w = 0n;
     for (let j = 0; j < 8; j++) {
@@ -52,7 +60,11 @@ function blockToWords(bytes: Uint8Array): bigint[] {
     }
     words.push(w & MASK64);
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> basmala_branch
   return words;
 }
 
@@ -62,8 +74,23 @@ export interface Blake2bFrame {
   i?: number;
   indices?: number[];
   mIndices?: number[];
+<<<<<<< HEAD
   before?: { a: string; b: string; c: string; d: string };
   after?: { a: string; b: string; c: string; d: string };
+=======
+  before?: {
+    a: string;
+    b: string;
+    c: string;
+    d: string;
+  };
+  after?: {
+    a: string;
+    b: string;
+    c: string;
+    d: string;
+  };
+>>>>>>> basmala_branch
   vSnapshot?: string[];
   h?: string[];
   m?: string[];
@@ -71,6 +98,7 @@ export interface Blake2bFrame {
   out?: string[];
 }
 
+<<<<<<< HEAD
 // ✅ VISUALIZATION VERSION + REAL FINAL HASH FROM BLAKEJS
 export function generateBlake2bFrames(inputBytes: Uint8Array, outlen: number = 64): Blake2bFrame[] {
   const frames: Blake2bFrame[] = [];
@@ -89,20 +117,60 @@ export function generateBlake2bFrames(inputBytes: Uint8Array, outlen: number = 6
     frames.push({ type: "round_start", round: r });
 
     for (let i = 0; i < 8; i++) {
+=======
+// Generate frames for visualization
+export function generateBlake2bFrames(inputBytes: Uint8Array, outlen: number = 64): Blake2bFrame[] {
+  const frames: Blake2bFrame[] = [];
+  const m = blockToWords(inputBytes);
+  
+  // Initial h
+  let h = IV.slice();
+  frames.push({ type: "init", h: h.map(x => toHex64(x)) });
+  
+  // Prepare v
+  let v = h.concat(IV.slice());
+  frames.push({ type: "load_block", m: m.map(toHex64) });
+  
+  // Compress: 12 rounds
+  for (let r = 0; r < 12; r++) {
+    frames.push({ type: "round_start", round: r });
+    
+    // 8 G applications per round
+    for (let i = 0; i < 8; i++) {
+      // Indices for G function
+>>>>>>> basmala_branch
       const a = (i % 8);
       const b = ((i + 4) % 8);
       const c = ((i + 8) % 16);
       const d = ((i + 12) % 16);
+<<<<<<< HEAD
 
       const m1 = SIGMA[r][2*i];
       const m2 = SIGMA[r][2*i + 1];
 
       const before = { a: v[a], b: v[b], c: v[c], d: v[d] };
 
+=======
+      
+      // Sigma indices
+      const m1 = SIGMA[r][2*i];
+      const m2 = SIGMA[r][2*i + 1];
+      
+      // Capture before
+      const before = { 
+        a: v[a], 
+        b: v[b], 
+        c: v[c], 
+        d: v[d] 
+      };
+      
+      // G operation
+>>>>>>> basmala_branch
       let va = v[a];
       let vb = v[b];
       let vc = v[c];
       let vd = v[d];
+<<<<<<< HEAD
 
       va = (va + vb + m[m1]) & MASK64;
       vd = rotr64((vd ^ va) & MASK64, 32);
@@ -116,13 +184,44 @@ export function generateBlake2bFrames(inputBytes: Uint8Array, outlen: number = 6
       vc = (vc + vd) & MASK64;
       vb = rotr64((vb ^ vc) & MASK64, 63);
 
+=======
+      
+      // Step 1: Mix with message words
+      va = (va + vb + m[m1]) & MASK64;
+      vd = rotr64((vd ^ va) & MASK64, 32);
+      
+      // Step 2: Mix columns
+      vc = (vc + vd) & MASK64;
+      vb = rotr64((vb ^ vc) & MASK64, 24);
+      
+      // Step 3: Mix with second message word
+      va = (va + vb + m[m2]) & MASK64;
+      vd = rotr64((vd ^ va) & MASK64, 16);
+      
+      // Step 4: Final mix
+      vc = (vc + vd) & MASK64;
+      vb = rotr64((vb ^ vc) & MASK64, 63);
+      
+      // Assign back
+>>>>>>> basmala_branch
       v[a] = va;
       v[b] = vb;
       v[c] = vc;
       v[d] = vd;
+<<<<<<< HEAD
 
       const after = { a: v[a], b: v[b], c: v[c], d: v[d] };
 
+=======
+      
+      const after = { 
+        a: v[a], 
+        b: v[b], 
+        c: v[c], 
+        d: v[d] 
+      };
+      
+>>>>>>> basmala_branch
       frames.push({
         type: "G",
         round: r,
@@ -144,6 +243,7 @@ export function generateBlake2bFrames(inputBytes: Uint8Array, outlen: number = 6
         vSnapshot: v.map(toHex64)
       });
     }
+<<<<<<< HEAD
 
     frames.push({ type: "round_end", round: r, v: v.map(toHex64) });
   }
@@ -157,6 +257,22 @@ export function generateBlake2bFrames(inputBytes: Uint8Array, outlen: number = 6
   frames.push({ type: "compress", newh: finalHex });
   frames.push({ type: "final", out: finalHex });
 
+=======
+    
+    frames.push({ type: "round_end", round: r, v: v.map(toHex64) });
+  }
+  
+  // Finalize: update h
+  const newh: bigint[] = [];
+  for (let i = 0; i < 8; i++) {
+    const val = (h[i] ^ v[i] ^ v[i + 8]) & MASK64;
+    newh.push(val);
+  }
+  
+  frames.push({ type: "compress", newh: newh.map(toHex64) });
+  frames.push({ type: "final", out: newh.map(toHex64).slice(0, outlen / 8) });
+  
+>>>>>>> basmala_branch
   return frames;
 }
 
@@ -169,3 +285,10 @@ export function prepareInput(inputText: string): Uint8Array {
   return padded;
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> basmala_branch

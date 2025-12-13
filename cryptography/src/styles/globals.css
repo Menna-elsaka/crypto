@@ -20,6 +20,11 @@
   --theme-accent-secondary: #5B8DEE;
   --theme-shadow: rgba(138, 43, 226, 0.2);
   --theme-glow: rgba(138, 43, 226, 0.8);
+<<<<<<< HEAD
+=======
+  --text-color: #ffffff;
+  --theme-inverted-text: white;
+>>>>>>> basmala_branch
 }
 
 /* Light Theme (Clean & Professional) */
@@ -35,6 +40,11 @@
   --theme-accent-secondary: #8B5CF6;
   --theme-shadow: rgba(0, 0, 0, 0.05);
   --theme-glow: transparent;
+<<<<<<< HEAD
+=======
+  --text-color: #000000;
+  --theme-inverted-text: #1A1A1A;
+>>>>>>> basmala_branch
 }
 
 :root {
