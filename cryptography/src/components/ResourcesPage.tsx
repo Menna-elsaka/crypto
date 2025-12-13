@@ -102,7 +102,7 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
                       <Button
                         className="w-full justify-between theme-accent-bg theme-transition"
   style={{
-    color: 'var(--theme-text)',
+    color: '#FFFFFF', 
     border: '1px solid var(--theme-accent)',
     borderRadius: '8px',
     padding: '12px 16px'
@@ -116,7 +116,7 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
                         onClick={() => window.open(algorithm.resources.documentation, '_blank')}
                       >
                         Official Docs
-                        <ExternalLink className="w-4 h-4 theme-text theme-transition" />
+                        <ExternalLink className="w-4 h-4 text-white theme-transition" />
                       </Button>
                     </motion.div>
                   </div>
