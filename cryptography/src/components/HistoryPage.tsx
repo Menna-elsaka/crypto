@@ -72,21 +72,12 @@ export function HistoryPage({}: HistoryPageProps) {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h1 
-<<<<<<< HEAD
             className=" mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl  theme-accent theme-transition"
             style={{ textShadow: '0 0 20px var(--theme-glow)' }}
           >
             HISTORY OF ENCRYPTION
           </h1>
           <p className="theme-text-secondary theme-transition text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4">
-=======
-            className="text-purple-400 mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl"
-            style={{ textShadow: '0 0 20px rgba(138, 43, 226, 0.8)' }}
-          >
-            HISTORY OF ENCRYPTION
-          </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4">
->>>>>>> basmala_branch
             Journey through time to explore the evolution of cryptography from ancient ciphers to modern algorithms.
           </p>
         </motion.div>
@@ -96,13 +87,8 @@ export function HistoryPage({}: HistoryPageProps) {
           <div 
             className="absolute left-1/2 top-0 bottom-0 w-0.5 hidden md:block" 
             style={{
-<<<<<<< HEAD
               background: 'linear-gradient(to bottom, var(--theme-accent), var(--theme-accent-secondary), var(--theme-accent))',
               boxShadow: '0 0 10px var(--theme-shadow)'
-=======
-              background: 'linear-gradient(to bottom, rgba(138, 43, 226, 0.5), rgba(138, 43, 226, 0.3), rgba(138, 43, 226, 0.5))',
-              boxShadow: '0 0 10px rgba(138, 43, 226, 0.5)'
->>>>>>> basmala_branch
             }}
           />
 
@@ -123,7 +109,6 @@ export function HistoryPage({}: HistoryPageProps) {
                   } flex-col`}
                 >
                   <div className={`flex-1 ${isEven ? 'md:text-right' : 'md:text-left'} text-center`}>
-<<<<<<< HEAD
                    <motion.div
   whileHover={{ 
     scale: 1.03,
@@ -137,18 +122,6 @@ style={{
   borderColor: 'var(--theme-card-border)',
   boxShadow: '0 0 15px var(--theme-shadow)'
 }}
-=======
-                    <motion.div
-                      whileHover={{ 
-                        scale: 1.03,
-                        boxShadow: '0 0 30px rgba(138, 43, 226, 0.5)'
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Card 
-                        className={`bg-gradient-to-br ${event.color} border ${event.borderColor} p-6 backdrop-blur-sm inline-block w-full md:w-auto`}
-                        style={{ boxShadow: '0 0 15px rgba(138, 43, 226, 0.2)' }}
->>>>>>> basmala_branch
                       >
                         <motion.div
                           initial={{ opacity: 0 }}
@@ -157,7 +130,6 @@ style={{
                           viewport={{ once: true }}
                         >
                         <div className={`flex items-center gap-3 mb-3 ${isEven ? 'md:flex-row-reverse' : 'md:flex-row'} justify-center md:justify-start`}>
-<<<<<<< HEAD
                           <div className="p-2 rounded-full theme-transition"  style={{
   backgroundColor: 'color-mix(in srgb, var(--theme-accent) 25%, transparent)',
   boxShadow: '0 0 12px var(--theme-shadow)'
@@ -168,25 +140,12 @@ style={{
                           <span 
                             className=" tracking-wider theme-accent theme-transition"
                             
-=======
-                          <div className="p-2 rounded-full bg-purple-500/30" style={{ boxShadow: '0 0 10px rgba(138, 43, 226, 0.4)' }}>
-                            <Icon className="w-6 h-6 text-purple-400" style={{ filter: 'drop-shadow(0 0 6px rgba(138, 43, 226, 0.8))' }} />
-                          </div>
-                          <span 
-                            className="text-purple-400 tracking-wider"
-                            style={{ textShadow: '0 0 10px rgba(138, 43, 226, 0.6)' }}
->>>>>>> basmala_branch
                           >
                             {event.era}
                           </span>
                         </div>
-<<<<<<< HEAD
                         <h3 className=" mb-2 theme-accent theme-transition" >{event.title}</h3>
                         <p className="theme-text-secondary theme-transition">{event.description}</p>
-=======
-                        <h3 className="text-purple-300 mb-2" style={{ textShadow: '0 0 8px rgba(138, 43, 226, 0.4)' }}>{event.title}</h3>
-                        <p className="text-gray-400">{event.description}</p>
->>>>>>> basmala_branch
                       </motion.div>
                     </Card>
                     </motion.div>
@@ -198,17 +157,12 @@ style={{
                       whileInView={{ scale: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
                       viewport={{ once: true }}
-<<<<<<< HEAD
                       className="w-4 h-4 rounded-full"
 style={{
   backgroundColor: 'var(--theme-accent)',
   boxShadow: '0 0 20px var(--theme-glow)',
   border: '2px solid var(--theme-card-border)'
 }}
-=======
-                      className="w-4 h-4 rounded-full bg-purple-500 ring-4 ring-black"
-                      style={{ boxShadow: '0 0 15px rgba(138, 43, 226, 0.8)' }}
->>>>>>> basmala_branch
                     />
                   </div>
 
@@ -228,7 +182,6 @@ style={{
           className="mt-20"
         >
           <Card 
-<<<<<<< HEAD
             className="theme-card theme-transition p-8 text-center"
             style={{
   border: '1px solid var(--theme-card-border)',
@@ -242,18 +195,6 @@ style={{
               The Future: Quantum Cryptography
             </h2>
             <p className="theme-text-secondary theme-transition max-w-3xl mx-auto">
-=======
-            className="bg-gradient-to-br from-purple-500/20 to-blue-500/10 border-purple-500/40 p-8 text-center"
-            style={{ boxShadow: '0 0 30px rgba(138, 43, 226, 0.3)' }}
-          >
-            <h2 
-              className="text-purple-300 mb-4"
-              style={{ textShadow: '0 0 15px rgba(138, 43, 226, 0.6)' }}
-            >
-              The Future: Quantum Cryptography
-            </h2>
-            <p className="text-gray-400 max-w-3xl mx-auto">
->>>>>>> basmala_branch
               As quantum computers emerge, traditional encryption methods face new challenges. 
               Quantum cryptography and post-quantum algorithms are being developed to secure 
               our digital future against quantum threats, ensuring that encrypted data remains 

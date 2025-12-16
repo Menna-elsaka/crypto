@@ -15,12 +15,8 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
 
   return (
     <motion.div 
-<<<<<<< HEAD
       className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 theme-bg theme-transition"
       style={{ backgroundColor: '#EFECE3' }}
-=======
-      className="min-h-screen pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 theme-transition theme-bg"
->>>>>>> basmala_branch
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
@@ -34,20 +30,12 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
           className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
           <h1 
-<<<<<<< HEAD
             className="mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl font-semibold theme-accent theme-transition"
            
           >
             LEARNING RESOURCES
           </h1>
           <p className="max-w-2xl mx-auto text-sm sm:text-base px-4  theme-text-secondary theme-transition">
-=======
-            className="theme-accent mb-3 sm:mb-4 tracking-wider text-2xl sm:text-3xl lg:text-4xl font-semibold theme-transition theme-glow"
-          >
-            LEARNING RESOURCES
-          </h1>
-          <p className="theme-text-secondary max-w-2xl mx-auto text-sm sm:text-base px-4 theme-transition">
->>>>>>> basmala_branch
             Comprehensive documentation, research papers, and tutorials for each encryption algorithm.
           </p>
         </motion.div>
@@ -64,7 +52,6 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
               }}
             >
               <Card 
-<<<<<<< HEAD
   className="p-6 sm:p-8 theme-card theme-transition"
   style={{ 
     border: '1px solid var(--theme-card-border)',
@@ -97,41 +84,6 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
 >
   Security: {algorithm.security}/10
 </span>
-=======
-                className="theme-card p-6 sm:p-8 theme-transition dark:!bg-[#111827] dark:!border-[#1f2937]"
-                style={{ 
-                  borderColor: 'var(--theme-card-border)',
-                  boxShadow: 'var(--theme-shadow)'
-                }}
-              >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 gap-4">
-                  <div className="flex-1">
-                    <h2 className="theme-text mb-2 font-semibold text-xl sm:text-2xl theme-transition">{algorithm.name}</h2>
-                    <p className="theme-text-secondary mb-4 theme-transition">{algorithm.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span 
-                        className="px-3 py-1 rounded-full text-xs font-medium theme-transition"
-                        style={{ 
-                          backgroundColor: 'var(--theme-card-bg)',
-                          borderColor: 'var(--theme-card-border)',
-                          border: '1px solid var(--theme-card-border)',
-                          color: 'var(--theme-text)'
-                        }}
-                      >
-                        {algorithm.type}
-                      </span>
-                      <span 
-                        className="px-3 py-1 rounded-full text-xs font-medium theme-transition"
-                        style={{ 
-                          backgroundColor: 'var(--theme-card-bg)',
-                          borderColor: 'var(--theme-card-border)',
-                          border: '1px solid var(--theme-card-border)',
-                          color: 'var(--theme-text)'
-                        }}
-                      >
-                        Security: {algorithm.security}/10
-                      </span>
->>>>>>> basmala_branch
                     </div>
                   </div>
                 </div>
@@ -149,7 +101,6 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
                     >
                       <Button
                         className="w-full justify-between theme-accent-bg theme-transition"
-<<<<<<< HEAD
   style={{
     color: '#FFFFFF', 
     border: '1px solid var(--theme-accent)',
@@ -166,17 +117,6 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
                       >
                         Official Docs
                         <ExternalLink className="w-4 h-4 text-white theme-transition" />
-=======
-                        style={{
-                          background: `linear-gradient(to right, var(--theme-accent), var(--theme-accent-secondary))`,
-                          borderColor: 'var(--theme-card-border)',
-                          boxShadow: '0 0 10px var(--theme-shadow)'
-                        }}
-                        onClick={() => window.open(algorithm.resources.documentation, '_blank')}
-                      >
-                        Official Docs
-                        <ExternalLink className="w-4 h-4" />
->>>>>>> basmala_branch
                       </Button>
                     </motion.div>
                   </div>
@@ -200,7 +140,6 @@ export function ResourcesPage({ selectedAlgorithmId }: ResourcesPageProps) {
                           whileHover={{ 
                             scale: 1.02,
                           }}
-<<<<<<< HEAD
                           className="flex items-center justify-between p-3 rounded-lg cursor-pointer group theme-card theme-text theme-transition"
                          style={{
   border: '1px solid var(--theme-card-border)',
@@ -216,25 +155,6 @@ onMouseLeave={(e) => {
 }}
                         >
                           <span className="text-sm">{paper.title}</span>
-=======
-                          className="flex items-center justify-between p-3 rounded-lg cursor-pointer group theme-transition"
-                          style={{
-                            backgroundColor: 'var(--theme-card-bg)',
-                            border: '1px solid var(--theme-card-border)',
-                            color: 'var(--theme-text)',
-                            textDecoration: 'none'
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = 'var(--theme-accent)';
-                            e.currentTarget.style.textDecoration = 'underline';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = 'var(--theme-card-border)';
-                            e.currentTarget.style.textDecoration = 'none';
-                          }}
-                        >
-                          <span className="text-sm theme-text theme-transition">{paper.title}</span>
->>>>>>> basmala_branch
                           <ExternalLink className="w-4 h-4 theme-accent theme-transition" />
                         </motion.a>
                       ))}
@@ -260,7 +180,6 @@ onMouseLeave={(e) => {
                           whileHover={{ 
                             scale: 1.02,
                           }}
-<<<<<<< HEAD
                           className="flex items-center justify-between p-3 rounded-lg cursor-pointer group  theme-card theme-text theme-transition"
                           style={{
                             
@@ -278,25 +197,6 @@ onMouseLeave={(e) => {
 }}
                         >
                           <span className="text-sm">{tutorial.title}</span>
-=======
-                          className="flex items-center justify-between p-3 rounded-lg cursor-pointer group theme-transition"
-                          style={{
-                            backgroundColor: 'var(--theme-card-bg)',
-                            border: '1px solid var(--theme-card-border)',
-                            color: 'var(--theme-text)',
-                            textDecoration: 'none'
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = 'var(--theme-accent)';
-                            e.currentTarget.style.textDecoration = 'underline';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = 'var(--theme-card-border)';
-                            e.currentTarget.style.textDecoration = 'none';
-                          }}
-                        >
-                          <span className="text-sm theme-text theme-transition">{tutorial.title}</span>
->>>>>>> basmala_branch
                           <ExternalLink className="w-4 h-4 theme-accent theme-transition" />
                         </motion.a>
                       ))}

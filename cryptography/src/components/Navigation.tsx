@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import { Lock, Menu, X, Sun, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import logo from '../assets/e74a85a657cb63546e0a553caf049b3afbacaa51.png';
-import { useEffect, useState } from 'react';
-=======
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import logo from '../assets/e74a85a657cb63546e0a553caf049b3afbacaa51.png';
-import { useState } from 'react';
->>>>>>> basmala_branch
+import { useState,useEffect } from 'react';
 
 interface NavigationProps {
   currentPage: string;
@@ -25,28 +18,18 @@ export function Navigation({ currentPage, onNavigate, theme, onToggleTheme }: Na
     { name: 'Algorithms', path: 'algorithms' },
     { name: 'Comparison', path: 'comparison' },
     { name: 'History', path: 'history' },
-<<<<<<< HEAD
-=======
     { name: 'Cryptanalysis', path: 'cryptanalysis' },
->>>>>>> basmala_branch
     { name: 'Resources', path: 'resources' },
     { name: 'About', path: 'about' },
   ];
 
-<<<<<<< HEAD
-
-=======
->>>>>>> basmala_branch
   const handleNavigate = (path: string) => {
     onNavigate(path);
     setIsMobileMenuOpen(false);
   };
-<<<<<<< HEAD
 useEffect(() => {
   document.documentElement.setAttribute("data-theme", theme);
 }, [theme]);
-=======
->>>>>>> basmala_branch
 
   return (
     <motion.nav
@@ -103,21 +86,6 @@ useEffect(() => {
               }}
             />
             <div className="flex items-center gap-1.5 sm:gap-2 relative z-10">
-<<<<<<< HEAD
-              <motion.div
-                animate={{
-                  rotate: [0, 10, -10, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity
-                }}
-              >
-                <Lock className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 theme-accent theme-transition" />
-              </motion.div>
-=======
->>>>>>> basmala_branch
               <span 
                 className="theme-accent tracking-wider text-sm sm:text-base lg:text-lg theme-transition theme-glow"
               >

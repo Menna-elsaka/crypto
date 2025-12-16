@@ -7,10 +7,7 @@ import { TypingAnimation } from './TypingAnimation';
 import { FloatingParticles } from './FloatingParticles';
 import { ScrollIndicator } from './ScrollIndicator';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-<<<<<<< HEAD
-=======
 import robotImage from 'figma:asset/123d91143343ea953e49132a57ab96e260475a33.png';
->>>>>>> basmala_branch
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
